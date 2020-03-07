@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>
+  Donate
+ </title>
+ <style>
+
+  body
+  {
+    background-color: coral;
+  }
+
+
+  .menu 
+  { 
+    grid-area: menu;
+  }
+
+  .openMenu
+  {
+    width: 75px;
+    height: 30px;
+    float: right;
+    color: #010101; /* Text color */
+    background-color: transparent; /* Remove background color */
+    border: 2px solid #010101; /* Border thickness, line style, and color */
+    border-radius: 20px; /* Adds curve to border corners */
+    text-transform: uppercase; /* Make letters uppercase */
+    font-size: 12pt;
+  }
+
+  .menuButton
+  {
+    width: 75px;   /* how many pixels wide */
+    height: 30px;  /* how many pixels tall */
+    float: right;  /* Puts it to the right of other elements */
+    color: #010101; /* Text color */
+    background-color: transparent; /* Remove background color */
+    border: 2px solid #010101; /* Border thickness, line style, and color */
+    border-radius: 20px; /* Adds curve to border corners */
+    text-transform: uppercase; /* Make letters uppercase */
+    font-size: 8pt; /* font size */
+  }
+
+  .menuButton:active
+  {
+    width: 100px;   /* how many pixels wide */
+    height: 35px;  /* how many pixels tall */
+    float: right;  /* Puts it to the right of other elements */
+    color: #010101; /* Text color */
+    background-color: transparent; /* Remove background color */
+    border: 2px solid #010101; /* Border thickness, line style, and color */
+    border-radius: 20px; /* Adds curve to border corners */
+    text-transform: uppercase; /* Make letters uppercase */
+    font-size: 10pt; /* font size */
+  }
+
+  .title
+  {  
+    grid-area: title;
+    font-weight: bold;
+    text-align: center; 
+    font-size: 30pt;
+  }
+
+  .subtitle 
+  { 
+    grid-area: subtitle;
+    text-align: center;
+    font-size: 20pt;
+    padding: 20px 0;
+  }
+
+  .donateAnimals
+  { 
+    grid-area: donateAnimals; 
+    text-align: center;
+    font-size: 12pt;
+    padding: 20px 0;
+  }
+
+  .hostDrive
+  {  
+    grid-area: hostDrive; 
+    text-align: center;
+    font-size: 12pt;
+    padding: 20px 0;
+  }
+
+  .donateMoney
+  { 
+    grid-area: donateMoney; 
+    text-align: center;
+    font-size: 12pt;
+    padding: 20px 0;
+  }
+
+  .donateButton
+  {
+    width: 100px;
+    height: 20px;
+    background: black;
+    border: 1px solid black;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .grid-container 
+  {
+    display: grid;
+    grid-template-areas:
+      'menu menu menu menu menu menu'
+      'title title title title title title'
+      'subtitle subtitle subtitle subtitle subtitle subtitle'
+      'donateAnimals donateAnimals donateAnimals hostDrive hostDrive hostDrive'
+      'donateAnimals donateAnimals donateAnimals hostDrive hostDrive hostDrive'
+      'donateMoney donateMoney donateMoney donateMoney donateMoney donateMoney'
+      'donateMoney donateMoney donateMoney donateMoney donateMoney donateMoney';
+  }
+ </style>
+ <script>
+
+   // A function to take us to the donate page
+   function donateAnimalsPage()
+   {
+     // Code to take us to the donate page
+     window.open('https://d4q2.github.io/donateanimals');
+   }
+
+   // And the same thing for the host drive page
+   function hostDrivePage()
+   {
+     window.open('https://d4q2.github.io/hostdrive');
+   }
+
+   // And for the home page
+   function homePage()
+   {
+     window.open('https://d4q2.github.io/home');
+   }
+
+   // And for the settings page
+   function settingsPage()
+   {
+     window.open('https://d4q2.github.io/settings');
+   }
+
+   // And for the donate money page
+   function donateMoneyPage()
+   {
+     window.open('https://d4q2.github.io/donatemoney');
+   }
+
+
+
+   let menuBool = false;
+
+   function openMenu()
+   {
+     menuBool = menuBool ? false : true;
+
+
+     if (menuBool == true)
+     {
+       var menu = document.getElementById("menu");
+
+       // Create a button (in this case it will be the home button)
+       var homeButton = document.createElement("BUTTON");
+
+        // Change the innerHTML to a sensible set of text (in this case home)
+        homeButton.innerHTML = "Home";
+
+        // Change the class to the class for menu buttons and the id to homeButton so we can access it 
+        // easier and it can assume previously defined css values
+        homeButton.setAttribute("class", "menuButton");
+        homeButton.setAttribute("id", "homeButton");
+
+        // Change the onclick value to what we want (in this case a function to take us  to the donate page)
+        homeButton.onclick = homePage;
+
+        // Append donateButton to the menu <div>
+        menu.appendChild(homeButton);
+
+        // Move it into the perfect position
+        homeButton.style.transform = "translateX(-10px)";
+
+
+        // And the same thing for the settings button
+        var settingsButton = document.createElement("BUTTON");
+        settingsButton.innerHTML = "Settings";
+        settingsButton.setAttribute("class", "menuButton");
+        settingsButton.setAttribute("id", "settingsButton");
+        menu.appendChild(settingsButton);
+        settingsButton.style.transform = "translateX(-20px)";
+        settingsButton.onclick = settingsPage;
+     }
+
+     else
+     {
+       // Clear our menu div
+       document.getElementById("menu").innerHTML = "";
+
+       // Get variable for menu div and make variable for our new openMenu button
+       var menu = document.getElementById("menu");
+       var menuOpener = document.createElement("BUTTON");
+ 
+       // Specify qualities for our openMenu button
+       menuOpener.innerHTML = "Menu";
+       menuOpener.setAttribute("class", "openMenu");
+       menuOpener.setAttribute("id", "menuOpener");
+       menuOpener.onclick = openMenu;
+
+       // Append it to the menu div
+       menu.appendChild(menuOpener);
+     }
+   }
+  </script>
+
+</head>
+<body>
+
+ <div class="grid-container">
+  <div class="menu" id="menu"><button class="openMenu" id="openMenuButton" onclick="openMenu()">Menu</button></div>
+  <div class="title">Mid-Atlantic SAFE</div>
+  <div class="subtitle">Bringing toys to children in need</div>
+  
+  <div class="donateAnimals">
+    <image src="file:///Users/daniel/Desktop/bridge.png" width="500px" ></image><br> 
+    <b>Donate Animals</b><br>
+    Find a near donation location to donate your stuffed animals to so our chapter members can clean them and give them away.<br>
+    <button id="animalButton" class="donateButton" onclick="donateAnimalsPage()">Donate</button> 
+  </div>
+  
+  <div class="hostDrive">
+    <image src="file:///Users/daniel/Desktop/bridge.png" width="500px"></image><br> 
+    <b>Host a Stuffed Animal Drive</b><br>
+    Want to host a stuffed animal drive or a birthday drive?<br>
+    <button id="hostDriveButton" class="donateButton" onclick="hostDrivePage()">Host Drive</button> 
+  </div>
+
+  <div class="donateMoney">
+    <image src="file:///Users/daniel/Desktop/cash.png" width="500px"></image><br>  
+    <b>Donate Money</b><br> 
+    Help us out with a small donation.<br>
+    <button id="donateMoneyButton" class="donateButton" onclick="donateMoneyPage()">Donate</button>
+  </div>
+ </div>
+
+</body>
+</html>

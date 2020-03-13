@@ -2,25 +2,25 @@
    function donateAnimalsPage()
    {
      // Code to take us to the donate page
-     window.open('https://d4q2.github.io/donateanimals');
+    location.href = "https://d4q2.github.io/donateanimals";
    }
 
    // And the same thing for the host drive page
    function hostDrivePage()
    {
-     window.open('https://d4q2.github.io/hostdrive');
+     location.href = "https://d4q2.github.io/hostdrive";
    }
 
    // And for the home page
    function homePage()
    {
-     window.open('https://d4q2.github.io/home');
+     location.href = "https://d4q2.github.io/home";
    }
 
    // And for the donate money page
    function donateMoneyPage()
    {
-     window.open('https://d4q2.github.io/donatemoney');
+     location.href = "https://d4q2.github.io/donatemoney";
    }
 
 

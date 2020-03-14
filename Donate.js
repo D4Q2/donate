@@ -1,25 +1,27 @@
-   // A function to take us to the donate page
-   function donateAnimalsPage()
-   {
-     // Code to take us to the donate page
-    location.href = "https://d4q2.github.io/donateanimals";
-   }
-
-   // And the same thing for the host drive page
-   function hostDrivePage()
-   {
-     location.href = "https://d4q2.github.io/hostdrive";
-   }
-
    // And for the home page
    function homePage()
    {
      location.href = "https://d4q2.github.io/home";
    }
 
-   // And for the donate money page
+   // A function to take us to the host drive page
+   function hostDrivePage()
+   {
+     // Code to take us to the donate page
+     location.href = "https://d4q2.github.io/hostdrive";
+   }
+
+   // A function to take us to the donate animals page
+   function donationLocationsPage()
+   {
+     // Code to take us to the donate page
+     location.href = "https://d4q2.github.io/donationlocations";
+   }
+
+   // A function to take us to the donate page
    function donateMoneyPage()
    {
+     // Code to take us to the donate page
      location.href = "https://d4q2.github.io/donatemoney";
    }
 
@@ -55,6 +57,33 @@
 
         // Move it into the perfect position
         homeButton.style.transform = "translateX(-10px)";
+        
+        // And also the same process for the host drive button
+        var hostDriveButton = document.createElement("BUTTON");
+        hostDriveButton.innerHTML = "Host Drive";
+        hostDriveButton.setAttribute("class", "menuButton");
+        hostDriveButton.setAttribute("id", "hostDriveButton");
+        menu.appendChild(hostDriveButton);
+        hostDriveButton.style.transform = "translateX(-20px)";
+        hostDriveButton.onclick = hostDrivePage;
+        
+        // And also the same process for the donation locations button
+        var donationLocationsButton = document.createElement("BUTTON");
+        donationLocationsButton.innerHTML = "Donation Locations";
+        donationLocationsButton.setAttribute("class", "menuButton");
+        donationLocationsButton.setAttribute("id", "donationLocationsButton");
+        menu.appendChild(donationLocationsButton);
+        donationLocationsButton.style.transform = "translateX(-30px)";
+        donationLocationsButton.onclick = donationLocationsPage;
+        
+        // And also the same process for the donate money button
+        var donateMoneyButton = document.createElement("BUTTON");
+        donateMoneyButton.innerHTML = "Donate Money";
+        donateMoneyButton.setAttribute("class", "menuButton");
+        donateMoneyButton.setAttribute("id", "moneyButton");
+        menu.appendChild(donateMoneyButton);
+        donateMoneyButton.style.transform = "translateX(-40px)";
+        donateMoneyButton.onclick = donateMoneyPage;
      }
 
      else

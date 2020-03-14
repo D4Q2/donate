@@ -113,11 +113,10 @@ body
   {
     display: grid;
     grid-template-areas:
-      'menu menu menu menu menu menu'
-      'title title title title title title'
-      'subtitle subtitle subtitle subtitle subtitle subtitle'
-      'donateAnimals donateAnimals donateAnimals hostDrive hostDrive hostDrive'
-      'donateAnimals donateAnimals donateAnimals hostDrive hostDrive hostDrive'
-      'donateMoney donateMoney donateMoney donateMoney donateMoney donateMoney'
-      'donateMoney donateMoney donateMoney donateMoney donateMoney donateMoney';
+      'menu'
+      'title'
+      'subtitle'
+      'donateAnimals'
+      'hostDrive'
+      'donateMoney';
   }
